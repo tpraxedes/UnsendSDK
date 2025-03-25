@@ -30,6 +30,8 @@ var client = new UnsendClient("your-api-key", "YOUR URL FOR UNSEND OR LEAVE IT B
 
 ### **Send an Email**
 ```csharp
+List<string> emailTo = new List<string>();
+emailTo.Add("test@test.com");
 var sendedMail = await client.emailService.SendEmailAsync(
     emailTo, 
     "C# SDK TEST", 
