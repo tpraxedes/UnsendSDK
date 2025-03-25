@@ -13,13 +13,13 @@ A C# SDK for interacting with the [Unsend API](https://unsend.dev/). This librar
 You can install the package from NuGet:
 
 ```sh
-dotnet add package UnsendSDK --version 1.0.2
+dotnet add package UnsendSDK --version 1.0.3
 ```
 
 Or, using the NuGet Package Manager:
 
 ```sh
-PM> NuGet\Install-Package UnsendSDK -Version 1.0.2
+PM> NuGet\Install-Package UnsendSDK -Version 1.0.3
 ```
 
 ## 🚀 Usage Example
