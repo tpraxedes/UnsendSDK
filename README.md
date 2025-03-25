@@ -4,6 +4,9 @@ A C# SDK for interacting with the [Unsend API](https://unsend.dev/). This librar
 
 ## Supported versions
 - Unsend 1.4.x
+- .NET Core 8.0
+- .NET Core 9.0
+- .NET Framework 4.8
 
 ## 📦 Installation
 
