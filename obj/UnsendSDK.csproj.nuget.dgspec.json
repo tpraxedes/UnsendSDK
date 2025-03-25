@@ -5,7 +5,7 @@
   },
   "projects": {
     "Y:\\UnsendSDK\\UnsendSDK.csproj": {
-      "version": "1.0.2",
+      "version": "1.0.3",
       "restore": {
         "projectUniqueName": "Y:\\UnsendSDK\\UnsendSDK.csproj",
         "projectName": "UnsendSDK",
@@ -25,6 +25,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
+          "net48",
           "net8.0",
           "net9.0"
         ],
@@ -41,6 +42,10 @@
           },
           "net9.0": {
             "targetAlias": "net9.0",
+            "projectReferences": {}
+          },
+          "net48": {
+            "targetAlias": "net48",
             "projectReferences": {}
           }
         },
@@ -63,6 +68,18 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Reflection.Metadata": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[9.0.3, )"
             }
           },
           "imports": [
@@ -89,6 +106,18 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Reflection.Metadata": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[9.0.3, )"
             }
           },
           "imports": [
@@ -108,6 +137,28 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        },
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Reflection.Metadata": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

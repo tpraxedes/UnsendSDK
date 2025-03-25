@@ -1,0 +1,15 @@
+Y:\UnsendSDK\bin\Release\net48\publish\UnsendSDK.dll
+Y:\UnsendSDK\bin\Release\net48\publish\UnsendSDK.pdb
+Y:\UnsendSDK\bin\Release\net48\publish\Microsoft.Bcl.AsyncInterfaces.dll
+Y:\UnsendSDK\bin\Release\net48\publish\Newtonsoft.Json.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Buffers.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Collections.Immutable.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.IO.Pipelines.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Memory.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Numerics.Vectors.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Reflection.Metadata.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Runtime.CompilerServices.Unsafe.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Text.Encodings.Web.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Text.Json.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.Threading.Tasks.Extensions.dll
+Y:\UnsendSDK\bin\Release\net48\publish\System.ValueTuple.dll

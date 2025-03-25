@@ -2,3 +2,5 @@ Y:\UnsendSDK\bin\Release\net9.0\publish\UnsendSDK.dll
 Y:\UnsendSDK\bin\Release\net9.0\publish\UnsendSDK.deps.json
 Y:\UnsendSDK\bin\Release\net9.0\publish\UnsendSDK.pdb
 Y:\UnsendSDK\bin\Release\net9.0\publish\Newtonsoft.Json.dll
+Y:\UnsendSDK\bin\Release\net9.0\publish\System.Reflection.Metadata.dll
+Y:\UnsendSDK\bin\Release\net9.0\publish\System.Text.Json.dll

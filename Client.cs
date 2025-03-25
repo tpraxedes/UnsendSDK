@@ -173,7 +173,15 @@
             /// <param name="scheduledAt">The new DateTime that you want to pass to the server.</param>
             public async Task<EmailId> UpdateScheduleAsync(string emailId, DateTime scheduledAt)
             {
-                var request = new HttpRequestMessage(HttpMethod.Patch, $"/api/v1/emails/{emailId}");
+                HttpMethod patchMethod;
+
+                #if NET48
+                patchMethod = new HttpMethod("PATCH");
+                #else
+                patchMethod = HttpMethod.Patch;
+                #endif
+
+                var request = new HttpRequestMessage(patchMethod, $"/api/v1/emails/{emailId}");
                 var content = new StringContent($"{{\r\n  \"scheduledAt\": \"{scheduledAt.ToString("yyyy-MM-ddTHH:mm:ssZ")}\"\r\n}}", null, "application/json");
                 request.Content = content;
                 var response = await _httpClient.SendAsync(request);
@@ -280,7 +288,14 @@
                     lastName = lastName,
                     subscribed = subscribed
                 };
-                var request = new HttpRequestMessage(HttpMethod.Patch, $"/api/v1/contactBooks/{contactBookId}/contacts/{contactId}");
+                HttpMethod patchMethod;
+
+                #if NET48
+                patchMethod = new HttpMethod("PATCH");
+                #else
+                patchMethod = HttpMethod.Patch;
+                #endif
+                var request = new HttpRequestMessage(patchMethod, $"/api/v1/contactBooks/{contactBookId}/contacts/{contactId}");
                 var content = new StringContent(JsonConvert.SerializeObject(newContact, Formatting.Indented), null, "application/json");
                 request.Content = content;
                 var response = await _httpClient.SendAsync(request);
