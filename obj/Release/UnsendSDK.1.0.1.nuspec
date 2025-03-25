@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UnsendSDK</id>
+    <version>1.0.1</version>
+    <title>UnsendSDK</title>
+    <authors>Thiago Praxedes</authors>
+    <description>A C# SDK for Unsend API</description>
+    <tags>Unsend, SDK, Email, API</tags>
+    <repository type="git" url="https://github.com/tpraxedes/UnsendSDK" commit="7ded08b0c0ba6d6a81d685a343edc6048f638c76" />
+    <dependencies>
+      <group targetFramework="net9.0">
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Y:\UnsendSDK\bin\Release\net9.0\UnsendSDK.dll" target="lib\net9.0\UnsendSDK.dll" />
+  </files>
+</package>
