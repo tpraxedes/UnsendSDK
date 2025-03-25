@@ -64,6 +64,7 @@ Console.WriteLine($"Canceled Email ID: {canceledEmail.emailId}");
 - ✅ Retrieve Email Status
 - ✅ Cancel Scheduled Emails
 - ✅ Get Domains Information
+- ✅ Create, Update, Upsert, Delete and Get Contact Info
 
 
 ## 💬 Support
