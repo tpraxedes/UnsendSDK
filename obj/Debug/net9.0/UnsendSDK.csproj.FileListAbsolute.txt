@@ -1,0 +1,12 @@
+Y:\UnsendSDK\bin\Debug\net9.0\UnsendSDK.deps.json
+Y:\UnsendSDK\bin\Debug\net9.0\UnsendSDK.dll
+Y:\UnsendSDK\bin\Debug\net9.0\UnsendSDK.pdb
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.csproj.AssemblyReference.cache
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.GeneratedMSBuildEditorConfig.editorconfig
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.AssemblyInfoInputs.cache
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.AssemblyInfo.cs
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.csproj.CoreCompileInputs.cache
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.dll
+Y:\UnsendSDK\obj\Debug\net9.0\refint\UnsendSDK.dll
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.pdb
+Y:\UnsendSDK\obj\Debug\net9.0\ref\UnsendSDK.dll
