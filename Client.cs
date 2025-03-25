@@ -8,6 +8,7 @@
     using System.Text;
     using System.Text.Json;
     using System.Threading.Tasks;
+    using static UnsendSDK.UnsendClient;
 
     public class UnsendClient
     {
@@ -15,6 +16,8 @@
         private readonly string _apiKey;
         private readonly string _baseUrl;
         public Email emailService;
+        public Contacts contactsService;
+        public Domains domainsService;
         /// <summary>
         /// Initializes a new instance of the <see cref="UnsendClient"/> class.
         /// </summary>
@@ -27,6 +30,8 @@
             _httpClient = new HttpClient { BaseAddress = new Uri(_baseUrl) };
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
             emailService = new Email(apiKey, baseUrl);
+            contactsService = new Contacts(apiKey, baseUrl);
+            domainsService = new Domains(apiKey, baseUrl);
         }
         /// <summary>
         /// Client for interacting with the Unsend API Email service.
@@ -62,8 +67,16 @@
             /// <param name="text">Optional plain text content of the email.</param>
             /// <param name="html">Optional HTML content of the email.</param>
             /// <param name="attachments">Optional list of attachments.</param>
-            public async Task<EmailId> SendEmailAsync(string to, string subject, string from, DateTime scheduledAt, string templateId = "", string replyTo = "", string cc = "", string bcc = "", string text = "", string html = "", List<Attachment> attachments = null)
+            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, DateTime scheduledAt, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = "", string html = "", List<Attachment> attachments = null)
             {
+                if (cc == null)
+                {
+                    cc = new List<string>();
+                }
+                if (bcc == null)
+                {
+                    bcc = new List<string>();
+                }
                 if (attachments == null)
                 {
                     attachments = new List<Attachment>();
@@ -104,8 +117,16 @@
             /// <param name="text">Optional plain text content of the email. But mandatory if html is not sended</param>
             /// <param name="html">Optional HTML content of the email. But mandatory if text is not sended</param>
             /// <param name="attachments">Optional list of attachments.</param>
-            public async Task<EmailId> SendEmailAsync(string to, string subject, string from, string templateId = "", string replyTo = "", string cc = "", string bcc = "", string text = "", string html = "", List<Attachment> attachments = null)
+            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = "", string html = "", List<Attachment> attachments = null)
             {
+                if (cc == null)
+                {
+                    cc = new List<string>();
+                }
+                if (bcc == null)
+                {
+                    bcc = new List<string>();
+                }
                 if (attachments == null)
                 {
                     attachments = new List<Attachment>();
@@ -150,7 +171,7 @@
             /// </summary>
             /// <param name="emailId">The emailid that you want to update the schedule.</param>
             /// <param name="scheduledAt">The new DateTime that you want to pass to the server.</param>
-            public async Task<EmailId> UpdateSchedule(string emailId, DateTime scheduledAt)
+            public async Task<EmailId> UpdateScheduleAsync(string emailId, DateTime scheduledAt)
             {
                 var request = new HttpRequestMessage(HttpMethod.Patch, $"/api/v1/emails/{emailId}");
                 var content = new StringContent($"{{\r\n  \"scheduledAt\": \"{scheduledAt.ToString("yyyy-MM-ddTHH:mm:ssZ")}\"\r\n}}", null, "application/json");
@@ -164,7 +185,7 @@
             /// Cancel an email schedule using the Unsend API
             /// </summary>
             /// <param name="emailId">The emailid that you want to cancel the schedule.</param>
-            public async Task<EmailId> CancelSchedule(string emailId)
+            public async Task<EmailId> CancelScheduleAsync(string emailId)
             {
                 var request = new HttpRequestMessage(HttpMethod.Post, $"/api/v1/emails/{emailId}/cancel");
                 var response = await _httpClient.SendAsync(request);
@@ -229,6 +250,136 @@
                 _httpClient = new HttpClient { BaseAddress = new Uri(_baseUrl) };
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
             }
+
+
+            public async Task<ContactInfo> CreateContactAsync(string email, string firstName, string lastName, string contactBookId, bool subscribed)
+            {
+                ContactInfo newContact = new ContactInfo
+                {
+                    email = email,
+                    firstName = firstName,
+                    lastName = lastName,
+                    subscribed = subscribed
+                };
+                var request = new HttpRequestMessage(HttpMethod.Get, $"/api/v1/contactBooks/{contactBookId}/contacts");
+                var content = new StringContent(JsonConvert.SerializeObject(newContact, Formatting.Indented), null, "application/json");
+                request.Content = content;
+                var response = await _httpClient.SendAsync(request);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+                ContactInfo info = JsonConvert.DeserializeObject<ContactInfo>(await response.Content.ReadAsStringAsync());
+                newContact.contactId = info.contactId;
+                return response.StatusCode == System.Net.HttpStatusCode.OK ? newContact : null;
+
+            }
+
+            public async Task<ContactInfo> UpdateContactAsync(string firstName, string lastName, string contactBookId, string contactId, bool subscribed)
+            {
+                ContactInfo newContact = new ContactInfo
+                {
+                    firstName = firstName,
+                    lastName = lastName,
+                    subscribed = subscribed
+                };
+                var request = new HttpRequestMessage(HttpMethod.Patch, $"/api/v1/contactBooks/{contactBookId}/contacts/{contactId}");
+                var content = new StringContent(JsonConvert.SerializeObject(newContact, Formatting.Indented), null, "application/json");
+                request.Content = content;
+                var response = await _httpClient.SendAsync(request);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+                ContactInfo info = JsonConvert.DeserializeObject<ContactInfo>(await response.Content.ReadAsStringAsync());
+                newContact.contactId = info.contactId;
+                return response.StatusCode == System.Net.HttpStatusCode.OK ? newContact : null;
+
+            }
+            public async Task<ContactInfo> UpsertContactAsync(string email, string firstName, string lastName, string contactBookId, string contactId, bool subscribed)
+            {
+                ContactInfo newContact = new ContactInfo
+                {
+                    email = email,
+                    firstName = firstName,
+                    lastName = lastName,
+                    subscribed = subscribed
+                };
+                var request = new HttpRequestMessage(HttpMethod.Put, $"/api/v1/contactBooks/{contactBookId}/contacts/{contactId}");
+                var content = new StringContent(JsonConvert.SerializeObject(newContact, Formatting.Indented), null, "application/json");
+                request.Content = content;
+                var response = await _httpClient.SendAsync(request);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+                ContactInfo info = JsonConvert.DeserializeObject<ContactInfo>(await response.Content.ReadAsStringAsync());
+                newContact.contactId = info.contactId;
+                return response.StatusCode == System.Net.HttpStatusCode.OK ? newContact : null;
+
+            }
+
+            public async Task<bool> DeleteContactAsync(string contactBookId, string contactId)
+            {
+
+                var request = new HttpRequestMessage(HttpMethod.Delete, $"/api/v1/contactBooks/{contactBookId}/contacts/{contactId}");
+                var response = await _httpClient.SendAsync(request);
+                return response.StatusCode == System.Net.HttpStatusCode.OK;
+
+            }
+
+            public async Task<ContactInfo> GetContactAsync(string contactBookId, string contactId)
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, $"/api/v1/contactBooks/{contactBookId}/contacts/{contactId}");
+                var response = await _httpClient.SendAsync(request);
+                return JsonConvert.DeserializeObject<ContactInfo>(await response.Content.ReadAsStringAsync());
+
+            }
+
+            public class ContactInfo
+            {
+                public string contactBookId { get; set; }
+                public string contactId { get; set; }
+                public string email { get; set; }
+                public string firstName { get; set; }
+                public string lastName { get; set; }
+                public bool subscribed { get; set; }
+            }
+
+
+        }
+        /// <summary>
+        /// Client for interacting with the Unsend API Domains.
+        /// </summary>
+        public class Domains
+        {
+            private readonly HttpClient _httpClient;
+            private readonly string _apiKey;
+            private readonly string _baseUrl;
+            public Domains(string apiKey, string baseUrl = "https://app.unsend.dev/")
+            {
+                _apiKey = apiKey;
+                _baseUrl = baseUrl;
+                _httpClient = new HttpClient { BaseAddress = new Uri(_baseUrl) };
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+            }
+            /// <summary>
+            /// Get domains information
+            /// </summary>
+            public async Task<List<DomainData>> GetDomains()
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, "/v1/domains");
+                var response = await _httpClient.SendAsync(request);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+                return JsonConvert.DeserializeObject<List<DomainData>>(await response.Content.ReadAsStringAsync());
+            }
+
+            public class DomainData
+            {
+                public int id { get; set; }
+                public string name { get; set; }
+                public int teamId { get; set; }
+                public string status { get; set; }
+                public string region { get; set; }
+                public bool clickTracking { get; set; }
+                public bool openTracking { get; set; }
+                public string publicKey { get; set; }
+                public string dkimStatus { get; set; }
+                public string spfDetails { get; set; }
+                public string createdAt { get; set; }
+                public string updatedAt { get; set; }
+            }
         }
     }
 
@@ -249,13 +400,13 @@
 
     internal class UnsendSendMail
     {
-        public string to { get; set; }
+        public List<string> to { get; set; }
         public string from { get; set; }
         public string subject { get; set; }
         public string templateId { get; set; }
         public string replyTo { get; set; }
-        public string cc { get; set; }
-        public string bcc { get; set; }
+        public List<string> cc { get; set; }
+        public List<string> bcc { get; set; }
         public string text { get; set; }
         public string html { get; set; }
         public List<Attachment> attachments { get; set; }

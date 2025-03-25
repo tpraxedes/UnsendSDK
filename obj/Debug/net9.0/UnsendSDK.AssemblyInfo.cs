@@ -13,12 +13,13 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Thiago Praxedes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("SDK for usage with Unsend")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("A C# SDK for Unsend API")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+e1b60c617973654107e529f742773d5119d01e81")]
 [assembly: System.Reflection.AssemblyProductAttribute("UnsendSDK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UnsendSDK")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/tpraxedes/UnsendSDK")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

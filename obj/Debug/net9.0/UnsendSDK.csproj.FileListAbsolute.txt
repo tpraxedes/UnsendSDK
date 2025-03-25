@@ -10,3 +10,4 @@ Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.dll
 Y:\UnsendSDK\obj\Debug\net9.0\refint\UnsendSDK.dll
 Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.pdb
 Y:\UnsendSDK\obj\Debug\net9.0\ref\UnsendSDK.dll
+Y:\UnsendSDK\obj\Debug\net9.0\UnsendSDK.sourcelink.json

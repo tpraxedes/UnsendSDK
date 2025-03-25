@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "Y:\\UnsendSDK\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|y:\\unsendsdk\\unsendsdk.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|solutionrelative:unsendsdk.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|y:\\unsendsdk\\unsendsdk.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|solutionrelative:unsendsdk.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|y:\\unsendsdk\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|solutionrelative:client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|y:\\unsendsdk\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B4D3F511-BBCF-401B-8B94-8C6A8B0B5E5A}|UnsendSDK.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Client.cs",
-              "DocumentMoniker": "Y:\\UnsendSDK\\Client.cs",
-              "RelativeDocumentMoniker": "Client.cs",
-              "ToolTip": "Y:\\UnsendSDK\\Client.cs*",
-              "RelativeToolTip": "Client.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T13:51:41.212Z",
+              "DocumentIndex": 1,
+              "Title": "UnsendSDK",
+              "DocumentMoniker": "Y:\\UnsendSDK\\UnsendSDK.csproj",
+              "RelativeDocumentMoniker": "UnsendSDK.csproj",
+              "ToolTip": "Y:\\UnsendSDK\\UnsendSDK.csproj",
+              "RelativeToolTip": "UnsendSDK.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-25T16:21:01.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "README.md",
+              "DocumentMoniker": "Y:\\UnsendSDK\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "Y:\\UnsendSDK\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-03-25T16:20:43.484Z",
               "EditorCaption": ""
             },
             {
@@ -36,6 +61,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnsendSDK",
+              "DocumentMoniker": "Y:\\UnsendSDK\\UnsendSDK.csproj",
+              "RelativeDocumentMoniker": "UnsendSDK.csproj",
+              "ToolTip": "Y:\\UnsendSDK\\UnsendSDK.csproj",
+              "RelativeToolTip": "UnsendSDK.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-25T15:43:29.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Client.cs",
+              "DocumentMoniker": "Y:\\UnsendSDK\\Client.cs",
+              "RelativeDocumentMoniker": "Client.cs",
+              "ToolTip": "Y:\\UnsendSDK\\Client.cs",
+              "RelativeToolTip": "Client.cs",
+              "ViewState": "AgIAAIwBAAAAAAAAAAAiwBcAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T13:51:41.212Z",
+              "EditorCaption": ""
             }
           ]
         }

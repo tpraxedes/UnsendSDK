@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <PackageId>UnsendSDK</PackageId>
-    <Version>1.0.1</Version>    
+    <Version>1.0.1</Version>
+    <Authors>Thiago Praxedes</Authors>
     <Company>Thiago Praxedes</Company>
     <Description>A C# SDK for Unsend API</Description>
     <PackageTags>Unsend, SDK, Email, API</PackageTags>
@@ -11,7 +12,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>$(AssemblyName)</Title>
-    <Authors>Thiago Praxedes</Authors>    
+    <Authors>Thiago Praxedes</Authors>
+    <Description>SDK for usage with Unsend</Description>
   </PropertyGroup>
 
   <ItemGroup>
