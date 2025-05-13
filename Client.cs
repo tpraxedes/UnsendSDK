@@ -67,7 +67,7 @@
             /// <param name="text">Optional plain text content of the email.</param>
             /// <param name="html">Optional HTML content of the email.</param>
             /// <param name="attachments">Optional list of attachments.</param>
-            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, DateTime scheduledAt, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = null, string html = null, List<Attachment> attachments = null)
+            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, DateTime scheduledAt, string templateId = "", List<string> replyTo = null, List<string> cc = null, List<string> bcc = null, string text = null, string html = null, List<Attachment> attachments = null)
             {
                 if (cc == null)
                 {
@@ -81,13 +81,17 @@
                 {
                     attachments = new List<Attachment>();
                 }
+                if (replyTo == null)
+                {
+                    replyTo = new List<string>();
+                }
                 UnsendSendMail sendMail = new UnsendSendMail
                 {
                     to = to,
                     from = from,
                     subject = subject,
                     templateId = templateId,
-                    replyTo = (String.IsNullOrEmpty(replyTo) || String.IsNullOrWhiteSpace(replyTo) ? from : replyTo),
+                    replyTo = replyTo,
                     cc = cc,
                     bcc = bcc,
                     text = text,
@@ -117,7 +121,7 @@
             /// <param name="text">Optional plain text content of the email. But mandatory if html is not sended</param>
             /// <param name="html">Optional HTML content of the email. But mandatory if text is not sended</param>
             /// <param name="attachments">Optional list of attachments.</param>
-            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = null, string html = null, List<Attachment> attachments = null)
+            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, string templateId = "", List<string> replyTo = null, List<string> cc = null, List<string> bcc = null, string text = null, string html = null, List<Attachment> attachments = null)
             {
                 if (cc == null)
                 {
@@ -131,14 +135,17 @@
                 {
                     attachments = new List<Attachment>();
                 }
+                if(replyTo == null)
+                {
+                    replyTo = new List<string>();
+                }
                 UnsendSendMail sendMail = new UnsendSendMail
                 {
                     to = to,
                     from = from,
                     subject = subject,
                     templateId = templateId,
-                    replyTo = (String.IsNullOrEmpty(replyTo) || String.IsNullOrWhiteSpace(replyTo) ? from : replyTo),
-                    //replyTo = replyTo,
+                    replyTo = replyTo,
                     cc = cc,
                     bcc = bcc,
                     text = text,
@@ -176,11 +183,11 @@
             {
                 HttpMethod patchMethod;
 
-                #if NET48
+#if NET48
                 patchMethod = new HttpMethod("PATCH");
-                #else
+#else
                 patchMethod = HttpMethod.Patch;
-                #endif
+#endif
 
                 var request = new HttpRequestMessage(patchMethod, $"/api/v1/emails/{emailId}");
                 var content = new StringContent($"{{\r\n  \"scheduledAt\": \"{scheduledAt.ToString("yyyy-MM-ddTHH:mm:ssZ")}\"\r\n}}", null, "application/json");
@@ -291,11 +298,11 @@
                 };
                 HttpMethod patchMethod;
 
-                #if NET48
+#if NET48
                 patchMethod = new HttpMethod("PATCH");
-                #else
+#else
                 patchMethod = HttpMethod.Patch;
-                #endif
+#endif
                 var request = new HttpRequestMessage(patchMethod, $"/api/v1/contactBooks/{contactBookId}/contacts/{contactId}");
                 var content = new StringContent(JsonConvert.SerializeObject(newContact, Formatting.Indented), null, "application/json");
                 request.Content = content;
@@ -420,7 +427,7 @@
         public string from { get; set; }
         public string subject { get; set; }
         public string templateId { get; set; }
-        public string replyTo { get; set; }
+        public List<string> replyTo { get; set; }
         public List<string> cc { get; set; }
         public List<string> bcc { get; set; }
         public string text { get; set; }

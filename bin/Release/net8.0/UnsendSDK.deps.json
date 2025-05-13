@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "UnsendSDK/1.0.4": {
+      "UnsendSDK/1.0.5": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "System.Net.Http": "4.3.4",
@@ -475,7 +475,7 @@
     }
   },
   "libraries": {
-    "UnsendSDK/1.0.4": {
+    "UnsendSDK/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

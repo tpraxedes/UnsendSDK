@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UnsendSDK</id>
+    <version>1.0.5</version>
+    <title>UnsendSDK</title>
+    <authors>Thiago Praxedes</authors>
+    <description>A C# SDK for Unsend API</description>
+    <tags>Unsend, SDK, Email, API</tags>
+    <repository type="git" url="https://github.com/tpraxedes/UnsendSDK" commit="ea7b7440aa4ed3abb80ae3c077a8338e1a74c828" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.8">
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Metadata" version="9.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="9.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Metadata" version="9.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="9.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net9.0">
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Metadata" version="9.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="9.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.IO" targetFramework=".NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Runtime" targetFramework=".NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Security.Cryptography.Algorithms" targetFramework=".NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Security.Cryptography.Encoding" targetFramework=".NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Security.Cryptography.Primitives" targetFramework=".NETFramework4.8" />
+      <frameworkAssembly assemblyName="System.Security.Cryptography.X509Certificates" targetFramework=".NETFramework4.8" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="Y:\UnsendSDK\bin\Release\net48\UnsendSDK.dll" target="lib\net48\UnsendSDK.dll" />
+    <file src="Y:\UnsendSDK\bin\Release\net8.0\UnsendSDK.dll" target="lib\net8.0\UnsendSDK.dll" />
+    <file src="Y:\UnsendSDK\bin\Release\net9.0\UnsendSDK.dll" target="lib\net9.0\UnsendSDK.dll" />
+  </files>
+</package>
