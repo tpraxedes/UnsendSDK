@@ -7,7 +7,7 @@
     <authors>Thiago Praxedes</authors>
     <description>A C# SDK for Unsend API</description>
     <tags>Unsend, SDK, Email, API</tags>
-    <repository type="git" url="https://github.com/tpraxedes/UnsendSDK" commit="ea7b7440aa4ed3abb80ae3c077a8338e1a74c828" />
+    <repository type="git" url="https://github.com/tpraxedes/UnsendSDK" commit="7ceed6a4c8d3d8ba2d436fa6db39dfcefe6f8241" />
     <dependencies>
       <group targetFramework=".NETFramework4.8">
         <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />

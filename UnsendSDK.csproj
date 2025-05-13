@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<PackageId>UnsendSDK</PackageId>
-		<Version>1.0.5</Version>
+		<Version>1.0.6</Version>
 		<Company>Thiago Praxedes</Company>
 		<Description>A C# SDK for Unsend API</Description>
 		<PackageTags>Unsend, SDK, Email, API</PackageTags>
