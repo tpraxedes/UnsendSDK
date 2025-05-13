@@ -67,7 +67,7 @@
             /// <param name="text">Optional plain text content of the email.</param>
             /// <param name="html">Optional HTML content of the email.</param>
             /// <param name="attachments">Optional list of attachments.</param>
-            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, DateTime scheduledAt, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = "", string html = "", List<Attachment> attachments = null)
+            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, DateTime scheduledAt, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = null, string html = null, List<Attachment> attachments = null)
             {
                 if (cc == null)
                 {
@@ -117,7 +117,7 @@
             /// <param name="text">Optional plain text content of the email. But mandatory if html is not sended</param>
             /// <param name="html">Optional HTML content of the email. But mandatory if text is not sended</param>
             /// <param name="attachments">Optional list of attachments.</param>
-            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = "", string html = "", List<Attachment> attachments = null)
+            public async Task<EmailId> SendEmailAsync(List<string> to, string subject, string from, string templateId = "", string replyTo = "", List<string> cc = null, List<string> bcc = null, string text = null, string html = null, List<Attachment> attachments = null)
             {
                 if (cc == null)
                 {

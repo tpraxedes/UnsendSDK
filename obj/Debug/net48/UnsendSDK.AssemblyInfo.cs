@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("A C# SDK for Unsend API")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.3.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.3+3c8e7d4bf5454262e454b78499135e427eecd17b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.3+28bfdbfef76974075ef4a45588fb87707cbe4399")]
 [assembly: System.Reflection.AssemblyProductAttribute("UnsendSDK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UnsendSDK")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.3.0")]
